@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>利用規約 | Moto旅</title>
+    <title>Terms & Conditions | MotoTabi</title>
 
     <meta name="description"
-        content="Moto旅の利用規約をご確認ください。">
+        content="Read the Terms & Conditions for using MotoTabi, including website usage, copyright, prohibited activities, disclaimers, and policy changes.">
+
+    <meta name="keywords"
+        content="MotoTabi terms, terms and conditions, motorcycle magazine terms, website terms">
+
+    <meta name="author"
+        content="MotoTabi">
 
     <meta name="robots"
-        content="index,follow">
+        content="index, follow">
+
+    <meta name="theme-color"
+        content="#0d1117">
+
+    <meta name="color-scheme"
+        content="dark light">
 
     <link rel="icon"
         href="assets/images/favicon.png">
@@ -24,7 +36,7 @@
         href="https://fonts.gstatic.com"
         crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -45,33 +57,60 @@ HEADER
 
     <div class="container">
 
-        <a href="index.html" class="logo">
+        <a href="index.html"
+            class="logo"
+            aria-label="MotoTabi Home">
 
-            <i class="fa-solid fa-motorcycle"></i>
+            <i class="fa-solid fa-motorcycle"
+                aria-hidden="true"></i>
 
-            <span>Moto旅</span>
+            <span>MotoTabi</span>
 
         </a>
 
-        <nav class="navbar">
+        <nav class="navbar"
+            id="primary-navigation"
+            aria-label="Primary navigation">
 
             <ul class="nav-links">
 
-                <li><a href="index.html">ホーム</a></li>
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
 
-                <li><a href="about.html">会社概要</a></li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
 
-                <li><a href="touring.html">ツーリング</a></li>
+                <li>
+                    <a href="touring.html">
+                        Touring
+                    </a>
+                </li>
 
-                <li><a href="contact.html">お問い合わせ</a></li>
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
 
             </ul>
 
         </nav>
 
-        <button class="menu-toggle">
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="primary-navigation">
 
-            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-bars"
+                aria-hidden="true"></i>
 
         </button>
 
@@ -79,11 +118,13 @@ HEADER
 
 </header>
 
+
 <!-- =========================================
 HERO
 ========================================= -->
 
-<section class="hero">
+<section class="hero"
+    aria-labelledby="terms-hero-title">
 
     <div class="container hero-grid">
 
@@ -95,18 +136,18 @@ HERO
 
             </span>
 
-            <h1>
+            <h1 id="terms-hero-title">
 
-                利用規約
+                Terms & Conditions
 
             </h1>
 
             <p>
 
-                Moto旅をご利用いただく前に、
-                以下の利用規約を必ずお読みください。
-                本サイトをご利用いただいた場合、
-                本規約に同意したものとみなします。
+                Please read these Terms & Conditions carefully
+                before using MotoTabi. By accessing or using this
+                website, you acknowledge that you have read,
+                understood, and agree to be bound by these terms.
 
             </p>
 
@@ -115,114 +156,274 @@ HERO
     </div>
 
 </section>
+
 
 <!-- =========================================
 TERMS
 ========================================= -->
 
-<section class="maintenance">
+<section class="maintenance"
+    aria-labelledby="terms-title">
 
     <div class="container">
 
         <div class="section-header">
 
-            <h2>
+            <span class="section-tag">
 
-                利用規約
+                Website Policy
+
+            </span>
+
+            <h2 id="terms-title">
+
+                Terms of Use
 
             </h2>
 
             <p>
 
-                Moto旅をご利用いただく際の基本ルールです。
+                These terms outline the basic rules and conditions
+                for using the MotoTabi website and its content.
 
             </p>
 
         </div>
 
-        <div class="tip-card">
 
-            <h3>1. サイトの利用</h3>
+        <!-- TERM 01 -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                1. Website Usage
+
+            </h3>
 
             <p>
 
-                当サイトは情報提供を目的として運営されています。
-                利用者は自己責任において本サイトをご利用ください。
+                MotoTabi operates this website for informational
+                and editorial purposes. Users may browse and use
+                the information provided on the website at their
+                own discretion and responsibility.
 
             </p>
-
-        </div>
-
-        <div class="tip-card">
-
-            <h3>2. 著作権</h3>
 
             <p>
 
-                掲載されている文章・画像・ロゴなどの著作権は
-                Moto旅または各権利者に帰属します。
-                無断転載・複製を禁止します。
+                You agree to use the website only for lawful
+                purposes and in a manner that does not interfere
+                with the operation, security, or availability
+                of the website.
 
             </p>
 
-        </div>
+        </article>
 
-        <div class="tip-card">
 
-            <h3>3. 禁止事項</h3>
+        <!-- TERM 02 -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                2. Copyright & Intellectual Property
+
+            </h3>
 
             <p>
 
-                法令違反、公序良俗に反する行為、
-                サイト運営を妨害する行為は禁止します。
+                Unless otherwise stated, the text, images, graphics,
+                logos, design elements, and other original content
+                published on MotoTabi are owned by MotoTabi or
+                their respective rights holders.
 
             </p>
-
-        </div>
-
-        <div class="tip-card">
-
-            <h3>4. 免責事項</h3>
 
             <p>
 
-                掲載情報について正確性の維持に努めていますが、
-                内容を保証するものではありません。
-                利用によって生じた損害について責任を負いません。
+                Reproducing, copying, modifying, distributing,
+                republishing, or commercially using website content
+                without prior permission is prohibited.
 
             </p>
 
-        </div>
+        </article>
 
-        <div class="tip-card">
 
-            <h3>5. 規約の変更</h3>
+        <!-- TERM 03 -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                3. Prohibited Activities
+
+            </h3>
 
             <p>
 
-                本規約は予告なく変更される場合があります。
-                最新版を本ページに掲載します。
+                Users must not use MotoTabi for unlawful activities,
+                activities that violate applicable laws or regulations,
+                or activities that are harmful to other users or
+                the operation of the website.
 
             </p>
-
-        </div>
-
-        <div class="tip-card">
-
-            <h3>6. お問い合わせ</h3>
 
             <p>
 
-                本規約に関するご質問は、
-                お問い合わせページよりご連絡ください。
+                This includes attempting to disrupt website services,
+                gain unauthorized access, introduce malicious code,
+                or misuse website content.
 
             </p>
 
-        </div>
+        </article>
+
+
+        <!-- TERM 04 -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                4. Disclaimer
+
+            </h3>
+
+            <p>
+
+                MotoTabi makes reasonable efforts to provide useful,
+                accurate, and up-to-date information. However, we do
+                not guarantee that all information will always be
+                complete, accurate, current, or error-free.
+
+            </p>
+
+            <p>
+
+                Motorcycle specifications, road conditions, weather,
+                regulations, availability, prices, and other external
+                information may change without notice.
+
+            </p>
+
+            <p>
+
+                Users should independently verify important information
+                before making decisions based on content published on
+                this website.
+
+            </p>
+
+        </article>
+
+
+        <!-- TERM 05 -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                5. External Links
+
+            </h3>
+
+            <p>
+
+                MotoTabi may contain links to third-party websites
+                or services. These external websites are operated
+                independently and are not controlled by MotoTabi.
+
+            </p>
+
+            <p>
+
+                MotoTabi is not responsible for the content,
+                availability, privacy practices, or policies of
+                third-party websites.
+
+            </p>
+
+        </article>
+
+
+        <!-- TERM 06 -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                6. Changes to These Terms
+
+            </h3>
+
+            <p>
+
+                MotoTabi may update or modify these Terms & Conditions
+                when necessary. Changes may be made without prior
+                individual notice.
+
+            </p>
+
+            <p>
+
+                The latest version will always be published on this
+                page. Continued use of the website after changes are
+                published constitutes acceptance of the updated terms.
+
+            </p>
+
+        </article>
+
+
+        <!-- TERM 07 -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                7. Contact
+
+            </h3>
+
+            <p>
+
+                If you have questions regarding these Terms &
+                Conditions, please contact us through the
+                <a href="contact.html">
+                    Contact page
+                </a>.
+
+            </p>
+
+        </article>
+
+
+        <!-- LAST UPDATED -->
+
+        <article class="tip-card">
+
+            <h3>
+
+                Last Updated
+
+            </h3>
+
+            <p>
+
+                These Terms & Conditions were last updated in
+                <strong>2026</strong>.
+
+            </p>
+
+        </article>
 
     </div>
 
 </section>
+
 
 <!-- =========================================
 FOOTER
@@ -234,33 +435,64 @@ FOOTER
 
         <div class="footer-top">
 
+
+            <!-- FOOTER BRAND -->
+
             <div class="footer-logo">
 
-                <h3>Moto旅</h3>
+                <h3>
+
+                    MotoTabi
+
+                </h3>
 
                 <p>
 
-                    日本全国のライダーへ向けて、
-                    プレミアムなツーリング情報と
-                    モーターサイクルコンテンツをお届けします。
+                    Premium motorcycle touring inspiration,
+                    scenic routes, reviews, and practical
+                    riding information for riders across Japan.
 
                 </p>
 
             </div>
 
+
+            <!-- FOOTER LINKS -->
+
             <div class="footer-links">
 
-                <h4>ページ</h4>
+                <h4>
+
+                    Pages
+
+                </h4>
 
                 <ul>
 
-                    <li><a href="about.html">会社概要</a></li>
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
 
-                    <li><a href="privacy.html">プライバシーポリシー</a></li>
+                    <li>
+                        <a href="privacy.html">
+                            Privacy Policy
+                        </a>
+                    </li>
 
-                    <li><a href="terms.html">利用規約</a></li>
+                    <li>
+                        <a href="terms.html"
+                            aria-current="page">
+                            Terms & Conditions
+                        </a>
+                    </li>
 
-                    <li><a href="contact.html">お問い合わせ</a></li>
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
 
                 </ul>
 
@@ -268,12 +500,15 @@ FOOTER
 
         </div>
 
+
+        <!-- FOOTER BOTTOM -->
+
         <div class="footer-bottom">
 
             <p>
 
                 © <span class="current-year"></span>
-                Moto旅. All Rights Reserved.
+                MotoTabi. All Rights Reserved.
 
             </p>
 
@@ -283,17 +518,30 @@ FOOTER
 
 </footer>
 
+
 <!-- =========================================
 BACK TO TOP
 ========================================= -->
 
-<button class="back-to-top">
+<button
+    class="back-to-top"
+    type="button"
+    aria-label="Back to top">
 
-    <i class="fa-solid fa-arrow-up"></i>
+    <i class="fa-solid fa-arrow-up"
+        aria-hidden="true"></i>
 
 </button>
 
-<script src="assets/js/script.js"></script>
+
+<!-- =========================================
+JAVASCRIPT
+========================================= -->
+
+<script
+    src="assets/js/script.js"
+    defer>
+</script>
 
 </body>
 
