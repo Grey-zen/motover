@@ -1,5 +1,5 @@
 /* ======================================================
-   Moto旅 - Premium Motorcycle Magazine
+   MotoTabi - Premium Motorcycle Magazine
    script.js Part 1
    Navigation & UI
 ====================================================== */
@@ -24,10 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         navToggle.addEventListener("click", () => {
 
-            navMenu.classList.toggle("active");
+            const isOpen = navMenu.classList.toggle("active");
             navToggle.classList.toggle("active");
-
             document.body.classList.toggle("menu-open");
+
+            navToggle.setAttribute("aria-expanded", String(isOpen));
 
         });
 
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 navMenu.classList.remove("active");
                 navToggle.classList.remove("active");
                 document.body.classList.remove("menu-open");
+                navToggle.setAttribute("aria-expanded", "false");
 
             });
 
@@ -55,11 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (window.scrollY > 80) {
 
-            header.classList.add("sticky");
+            header.classList.add("scrolled");
 
         } else {
 
-            header.classList.remove("sticky");
+            header.classList.remove("scrolled");
 
         }
 
@@ -70,6 +72,32 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", stickyHeader);
 
     /* ==================================================
+       NAVIGATION UX SAFEGUARDS
+    ================================================== */
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape" && navMenu?.classList.contains("active")) {
+            navMenu.classList.remove("active");
+            navToggle?.classList.remove("active");
+            document.body.classList.remove("menu-open");
+            navToggle?.setAttribute("aria-expanded", "false");
+        }
+
+    });
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 992 && navMenu?.classList.contains("active")) {
+            navMenu.classList.remove("active");
+            navToggle?.classList.remove("active");
+            document.body.classList.remove("menu-open");
+            navToggle?.setAttribute("aria-expanded", "false");
+        }
+
+    });
+
+    /* ==================================================
        ACTIVE NAVIGATION
     ================================================== */
 
@@ -77,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function activeNavigation() {
 
-        const scrollY = window.pageYOffset;
+        const scrollY = window.scrollY;
 
         sections.forEach(section => {
 
@@ -180,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 /* ======================================================
-   Moto旅 - Premium Motorcycle Magazine
+   MotoTabi - Premium Motorcycle Magazine
    script.js Part 2
    Scroll Reveal • Lazy Loading • Animations
 ====================================================== */
@@ -284,14 +312,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const heroImage = document.querySelector(".hero-image img");
 
+    let parallaxTicking = false;
+
     function heroParallax() {
 
-        if (!heroImage) return;
+        if (!heroImage || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            return;
+        }
 
-        const offset = window.pageYOffset * 0.18;
+        if (parallaxTicking) return;
 
-        heroImage.style.transform = `translateY(${offset}px) scale(1.03)`;
+        parallaxTicking = true;
 
+        requestAnimationFrame(() => {
+            const offset = Math.min(window.scrollY * 0.08, 45);
+            heroImage.style.setProperty("--parallax-y", `${offset}px`);
+            parallaxTicking = false;
+        });
     }
 
     window.addEventListener("scroll", heroParallax, {
@@ -380,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })();
 /* ======================================================
-   Moto旅 - Premium Motorcycle Magazine
+   MotoTabi - Premium Motorcycle Magazine
    script.js Part 3
    Counter • Gallery Lightbox • Newsletter • Ripple
 ====================================================== */
@@ -463,9 +500,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const overlay = document.createElement("div");
 
         overlay.className = "gallery-lightbox";
+        overlay.setAttribute("role", "dialog");
+        overlay.setAttribute("aria-modal", "true");
+        overlay.setAttribute("aria-hidden", "true");
 
         overlay.innerHTML = `
-            <span class="gallery-close">&times;</span>
+            <button class="gallery-close" type="button" aria-label="Close image preview">&times;</button>
             <img src="" alt="Gallery Image">
         `;
 
@@ -480,6 +520,7 @@ document.addEventListener("DOMContentLoaded", () => {
         overlayImage.onload = () => {
 
             overlay.classList.add("show");
+            overlay.setAttribute("aria-hidden", "false");
             document.body.style.overflow = "hidden";
 
         };
@@ -554,7 +595,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             }
 
-            alert("🎉 Thank you for subscribing!");
+            alert("🎉 Thanks for subscribing to MotoTabi!");
 
             newsletter.reset();
 
@@ -600,14 +641,15 @@ document.addEventListener("DOMContentLoaded", () => {
        KEYBOARD ACCESSIBILITY
     ================================================== */
 
-    document.querySelectorAll("button,a").forEach(item => {
+    // Native buttons and links already support Enter/Space keyboard interaction.
+    // Keep custom keyboard handling limited to non-native interactive elements.
+    document.querySelectorAll('[role="button"]').forEach(item => {
 
-        item.addEventListener("keyup", e => {
+        item.addEventListener("keydown", e => {
 
-            if (e.key === "Enter") {
-
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
                 item.click();
-
             }
 
         });
@@ -616,7 +658,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })();
 /* ======================================================
-   Moto旅 - Premium Motorcycle Magazine
+   MotoTabi - Premium Motorcycle Magazine
    script.js Part 4 (Final)
    Loading • Progress • Theme • Performance
 ====================================================== */
@@ -662,7 +704,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight;
 
-        const progress = (scrollTop / scrollHeight) * 100;
+        const progress = scrollHeight > 0
+            ? Math.min(100, Math.max(0, (scrollTop / scrollHeight) * 100))
+            : 0;
 
         progressBar.style.width = progress + "%";
 
@@ -713,11 +757,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (document.hidden) {
 
-            document.title = "👋 Come back to Moto旅";
+            document.title = "👋 Come back to MotoTabi";
 
         } else {
 
-            document.title = "Moto旅 | Premium Motorcycle Magazine";
+            document.title = "MotoTabi | Premium Motorcycle Magazine";
 
         }
 
@@ -824,7 +868,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ================================================== */
 
     console.log(
-        "%cMoto旅 Loaded Successfully 🚀",
+        "%cMotoTabi loaded successfully 🚀",
         "color:#ff3d00;font-size:16px;font-weight:bold;"
     );
 
