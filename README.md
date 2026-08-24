@@ -1,34 +1,42 @@
-# 🏍️ Moto旅 (MotoTabi)
+# 🏍️ MotoTabi
 
-日本全国のライダーへ向けたプレミアムモーターサイクルマガジン。
+### Premium Motorcycle Magazine for Riders Across Japan
 
-Moto旅は、ツーリング情報、バイクレビュー、ライダー向けガイドを発信するモダンな静的ウェブサイトです。
-シンプルで高速なデザインを採用し、あらゆるデバイスで快適に閲覧できます。
+**MotoTabi** is a modern static motorcycle magazine website created for riders across Japan.
 
----
+The platform features motorcycle touring information, bike reviews, rider-focused guides, travel inspiration, and practical motorcycle content through a clean, fast, and responsive experience.
 
-## 🌟 主な機能
-
-- プレミアムでレスポンシブなデザイン
-- モダンなホームページ
-- ツーリング特集ページ
-- 会社概要ページ
-- お問い合わせページ
-- プライバシーポリシー
-- 利用規約
-- モバイル対応ナビゲーション
-- スムーズスクロール
-- Back To Top ボタン
-- SEOに配慮したHTML構造
-- Font Awesome アイコン対応
+Built with a performance-focused approach, MotoTabi is designed to provide a smooth experience across desktop, tablet, and mobile devices.
 
 ---
 
-## 📂 プロジェクト構成
+## ✨ Features
+
+- 🏍️ Premium responsive motorcycle magazine design
+- 🏠 Modern homepage
+- 🗺️ Motorcycle touring guides and destinations
+- 🏁 Featured touring routes
+- 📰 Motorcycle-focused editorial content
+- 🏢 About MotoTabi page
+- 📩 Contact page
+- 🔐 Privacy Policy
+- 📜 Terms & Conditions
+- 📱 Mobile-responsive navigation
+- ⚡ Fast-loading static architecture
+- 🔝 Back-to-top functionality
+- 🔗 Smooth scrolling
+- 🔎 SEO-friendly HTML structure
+- ♿ Accessibility-conscious markup
+- 🎨 Font Awesome icon integration
+- 📱 Cross-device responsive layout
+
+---
+
+## 📂 Project Structure
 
 ```text
 MotoTabi/
-
+│
 ├── index.html
 ├── about.html
 ├── touring.html
@@ -37,94 +45,13 @@ MotoTabi/
 ├── terms.html
 │
 ├── assets/
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── script.js
+│   │
+│   └── images/
 │
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-└── images/
-```
-
----
-
-## 🛠 使用技術
-
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- Font Awesome
-- Google Fonts (Noto Sans JP)
-
----
-
-## 📱 対応ブラウザ
-
-- Google Chrome
-- Microsoft Edge
-- Mozilla Firefox
-- Safari
-- Opera
-
----
-
-## 🚀 特徴
-
-- モダンなUI/UX
-- 高速表示
-- モバイルファースト設計
-- レスポンシブデザイン
-- シンプルなコード構成
-- SEOフレンドリー
-- アクセシビリティを考慮
-
----
-
-## 📄 ページ一覧
-
-| ページ | 説明 |
-|---------|------|
-| Home | ホームページ |
-| About | Moto旅について |
-| Touring | ツーリング特集 |
-| Contact | お問い合わせ |
-| Privacy Policy | プライバシーポリシー |
-| Terms | 利用規約 |
-
----
-
-## 📸 コンテンツ
-
-Moto旅では以下の情報を提供しています。
-
-- 日本全国のツーリングスポット
-- 人気ツーリングルート
-- 季節ごとのおすすめコース
-- バイクライフのヒント
-- ライダー向けガイド
-
----
-
-## 🎨 デザイン
-
-Moto旅は以下をコンセプトに制作されています。
-
-- シンプル
-- モダン
-- プレミアム
-- ミニマル
-- 読みやすいレイアウト
-- ライダー向けマガジンデザイン
-
----
-
-## 📜 ライセンス
-
-このプロジェクトは個人学習およびポートフォリオ目的で制作されています。
-
----
-
-## ❤️ Moto旅
-
-**Ride More. Explore More. Enjoy Japan.**
+└── README.md
